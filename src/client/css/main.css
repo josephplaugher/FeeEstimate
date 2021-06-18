@@ -1,0 +1,24 @@
+#container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 75px 400px;
+    background-color: grey;;
+}
+ 
+#headers {
+    grid-column-start: 2;
+    grid-column-end: column2-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: red;
+    padding: 5px;
+}
+
+#tasks {
+    grid-column-start: 1;
+    grid-column-end: column2-end;
+    grid-row-start: 2;
+    grid-row-end: row3-end;
+    background-color: blue;
+    padding: 5px;
+}

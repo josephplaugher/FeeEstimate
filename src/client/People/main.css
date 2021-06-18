@@ -1,0 +1,12 @@
+.people-container {
+    margin-left:100px;
+    background-color: orange;
+    padding: 5px; 
+}
+ 
+.cost-data {
+    
+    display: block;
+    background-color: pink;
+    padding: 5px;
+}

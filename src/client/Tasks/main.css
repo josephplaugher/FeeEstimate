@@ -1,0 +1,14 @@
+.task-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 75px 300px; 
+    background-color: green;
+    padding: 5px;
+}
+ 
+.task-labels {
+    grid-column-start: 1;
+    grid-column-end: column2-end;
+    background-color: yellow;
+    padding: 5px;
+}
