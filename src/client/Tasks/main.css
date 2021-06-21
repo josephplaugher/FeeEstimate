@@ -1,14 +1,15 @@
 .task-container {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 200px 200px 150px 150px 150px;
     grid-template-rows: 75px 300px; 
-    background-color: green;
+    background-color: blue;
     padding: 5px;
 }
  
-.task-labels {
-    grid-column-start: 1;
-    grid-column-end: column2-end;
-    background-color: yellow;
+.people-container {
+    grid-column-start: 2;
+    grid-column-end: column5-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
     padding: 5px;
 }

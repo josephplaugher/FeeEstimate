@@ -1,12 +1,49 @@
-.people-container {
-    margin-left:100px;
-    background-color: orange;
-    padding: 5px; 
+.cost-data {
+    display: grid;
+    grid-template-columns: 200px 100px 100px 100px;
+    grid-template-rows: 75px 300px; 
+    background-color: green;
+    padding: 5px;
 }
  
+.name-labels {
+    grid-column-start: 1;
+    grid-column-end: column1-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+    background-color: yellow;
+}
+
 .cost-data {
-    
-    display: block;
-    background-color: pink;
+    grid-column-start: 2;
+    grid-column-end: column3-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+.bill-rate-column {  
+    grid-column-start: 2;
+    grid-column-end: column2-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+
+.hours-column {  
+    grid-column-start: 3;
+    grid-column-end: column3-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+.bill-amount-column {  
+    grid-column-start: 4;
+    grid-column-end: column4-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
     padding: 5px;
 }

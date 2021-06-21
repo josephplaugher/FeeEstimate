@@ -6,7 +6,7 @@ import './main.css'
 function Tasks(props) {
     // const [tasks, setTasks] = useState()
     return (
-        <>
+        <div className="task-container">
             <div className="task-labels" key={`${props.task.number} - div`} >
                 <p key={props.task.number}>Task: {props.task.number} - {props.task.name}</p>
             </div>
@@ -16,7 +16,7 @@ function Tasks(props) {
                     <Person person={p}></Person>
                 )}
             </div>
-        </>
+        </div>
     )
 }
 

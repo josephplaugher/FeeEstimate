@@ -26,13 +26,18 @@ function Person(props) {
     }
 
     return (
-        <p className="cost-data" key={props.person.name}>
-            {`${props.person.name}
-                Bill Rate:
-                ${getBillRate(props.person.name)}
-                bill amount:
-                ${getBillRate(props.person.name) * props.person.hours}`}
-        </p>
+        <div className="cost-data" key={props.person.name}>
+            <span className="name-labels">{props.person.name}</span>
+            <span className="bill-rate-column">
+                {getBillRate(props.person.name)}
+            </span>
+            <span className="hours-column">
+                {props.person.hours}
+            </span>
+            <span className="bill-amount-column">
+                {getBillRate(props.person.name) * props.person.hours}
+            </span>
+        </div>
 
     )
 }

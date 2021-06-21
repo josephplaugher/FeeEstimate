@@ -1,24 +1,56 @@
 #container {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 200px 200px 150px 150px 150px;
     grid-template-rows: 75px 400px;
     background-color: grey;;
 }
  
 #headers {
-    grid-column-start: 2;
-    grid-column-end: column2-end;
+    grid-column-start: 3;
+    grid-column-end: column4-end;
     grid-row-start: 1;
     grid-row-end: 2;
-    background-color: red;
+    padding: 5px;
+}
+
+.bill-rate-column {  
+    grid-column-start: 3;
+    grid-column-end: column3-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+
+.hours-column {  
+    grid-column-start: 4;
+    grid-column-end: column4-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+
+.bill-amount-column {  
+    grid-column-start: 5;
+    grid-column-end: column5-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
     padding: 5px;
 }
 
 #tasks {
     grid-column-start: 1;
-    grid-column-end: column2-end;
+    grid-column-end: column5-end;
     grid-row-start: 2;
     grid-row-end: row3-end;
-    background-color: blue;
+    padding: 5px;
+}
+
+.people-container {
+    grid-column-start: 2;
+    grid-column-end: column5-end;
+    grid-row-start: 2;
+    grid-row-end: row3-end;
     padding: 5px;
 }
