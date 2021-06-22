@@ -1,19 +1,19 @@
 #container {
     display: grid;
-    grid-template-columns: 200px 200px 150px 150px 150px;
-    grid-template-rows: 75px 400px;
+    grid-template-columns: 200px 200px 100px 100px 200px;
+    grid-template-rows: 75px 100%;
     background-color: grey;;
 }
  
 #headers {
     grid-column-start: 3;
-    grid-column-end: column4-end;
+    grid-column-end: column5-end;
     grid-row-start: 1;
     grid-row-end: 2;
     padding: 5px;
 }
 
-.bill-rate-column {  
+#bill-rate-header {  
     grid-column-start: 3;
     grid-column-end: column3-end;
     grid-row-start: 1;
@@ -22,7 +22,7 @@
 }
 
 
-.hours-column {  
+#hours-header {  
     grid-column-start: 4;
     grid-column-end: column4-end;
     grid-row-start: 1;
@@ -31,7 +31,7 @@
 }
 
 
-.bill-amount-column {  
+#bill-amount-header {  
     grid-column-start: 5;
     grid-column-end: column5-end;
     grid-row-start: 1;

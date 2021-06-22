@@ -7,11 +7,10 @@ import './css/main.css'
 function App() {
 	return (
 		<div id="container">
-			<p>Fee Estimate</p>
-			<p id="headers">
-				<span className="bill-rate-column">Bill Rate</span>
-				<span className="hours-column">Hours</span>
-				<span className="bill-amount-column">Bill Bill Amount</span></p>
+			<p id="fee">Fee Estimate</p>
+			<p id="bill-rate-header">Bill Rate</p>
+			<p id="hours-header">Hours</p>
+			<p id="bill-amount-header">Bill Bill Amount</p>
 			<div id="tasks" key={`${InitialTasks.number} - parent div`}>
 				{InitialTasks.map(t =>
 					<Tasks task={t} people={t.people}></Tasks>
