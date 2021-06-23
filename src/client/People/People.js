@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import InitialPeople from './InitialPeople'
-// import './css/index.css'
 import './main.css'
 
 function Person(props) {

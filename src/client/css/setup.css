@@ -1,0 +1,32 @@
+/* #setup-container {
+    display: grid;
+    grid-template-columns: 300px 400px;
+    grid-template-rows: 10% 90%;
+}
+
+#start-up-header {
+    grid-column-start: 1;
+    grid-column-end: column1-end;
+    grid-row-start: 1;
+    grid-row-end: row1-end;
+}
+
+.label {
+    grid-column-start: 1;
+    grid-column-end: column1-end;
+}
+
+.pcrf-input {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+ */
+
+
+ #setup-container {
+     margin:10px;
+ }
+
+ .view-change {
+     margin: 10px;
+ }

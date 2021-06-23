@@ -1,23 +1,44 @@
 import React, { useState, useEffect } from 'react'
-import InitialTasks from './Tasks/InitialTasks';
-import Tasks from './Tasks/Tasks'
-// import './css/index.css'
-import './css/main.css'
+import Setup from './Setup'
+import Fee from './Fee'
+import PeopleSetup from './PeopleSetup'
+import './css/setup.css'
 
 function App() {
-	return (
-		<div id="container">
-			<p id="fee">Fee Estimate</p>
-			<p id="bill-rate-header">Bill Rate</p>
-			<p id="hours-header">Hours</p>
-			<p id="bill-amount-header">Bill Bill Amount</p>
-			<div id="tasks" key={`${InitialTasks.number} - parent div`}>
-				{InitialTasks.map(t =>
-					<Tasks task={t} people={t.people}></Tasks>
-				)}
-			</div>
-		</div>
-	)
+
+    const [currentView, changeView] = useState('Setup')
+
+    if (currentView == 'Setup') {
+        return (
+            <>
+                <Setup />
+                <input className="view-change" type="button" name="Setup" value='Setup' onClick={(e) => changeView(e.target.value)} />
+                <input className="view-change" type="button" name="Fee" value='Fee' onClick={(e) => changeView(e.target.value)} />
+                <input className="view-change" type="button" name="People Setup" value='People Setup' onClick={(e) => changeView(e.target.value)} />
+            </>
+        )
+    }
+    if (currentView == 'Fee') {
+        return (
+            <>
+                <Fee />
+                <input className="view-change" type="button" name="Setup" value='Setup' onClick={(e) => changeView(e.target.value)} />
+                <input className="view-change" type="button" name="Fee" value='Fee' onClick={(e) => changeView(e.target.value)} />
+                <input className="view-change" type="button" name="People Setup" value='People Setup' onClick={(e) => changeView(e.target.value)} />
+            </>
+        )
+    }
+
+    if (currentView == 'People Setup') {
+        return (
+            <>
+                <PeopleSetup />
+                <input className="view-change" type="button" name="Setup" value='Setup' onClick={(e) => changeView(e.target.value)} />
+                <input className="view-change" type="button" name="Fee" value='Fee' onClick={(e) => changeView(e.target.value)} />
+                <input className="view-change" type="button" name="People Setup" value='People Setup' onClick={(e) => changeView(e.target.value)} />
+            </>
+        )
+    }
 }
 
 export default App
