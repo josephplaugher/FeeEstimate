@@ -1,43 +1,41 @@
-.cost-data {
+.person-data {
     display: grid;
-    grid-template-columns: 200px 100px 100px 100px;
+    grid-template-columns: 200px 100px 200px 100px 100px;
     grid-template-rows: 100%; 
-    background-color: green;
 }
  
-.name-labels {
+.ppl-name-input {
     grid-column-start: 1;
     grid-column-end: column1-end;
     grid-row-start: 1;
     grid-row-end: 2;
-    background-color: yellow;
 }
 
-.cost-data {
-    grid-column-start: 2;
-    grid-column-end: column3-end;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-
-.bill-rate-column {  
+.ppl-raw-input {
     grid-column-start: 2;
     grid-column-end: column2-end;
     grid-row-start: 1;
     grid-row-end: 2;
 }
 
-
-.hours-column {  
+.ppl-title-input {
     grid-column-start: 3;
     grid-column-end: column3-end;
     grid-row-start: 1;
     grid-row-end: 2;
 }
 
-.bill-amount-column {  
+
+.ppl-bill-input {
     grid-column-start: 4;
     grid-column-end: column4-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.ppl-mult-input {
+    grid-column-start: 5;
+    grid-column-end: column5-end;
     grid-row-start: 1;
     grid-row-end: 2;
 }

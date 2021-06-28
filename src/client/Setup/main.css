@@ -1,0 +1,54 @@
+#ppl-setup-container {
+    display: grid;
+    grid-template-columns: 200px 100px 200px 100px 100px;
+    grid-template-rows: 100px aut0;
+    padding: 5px;
+}
+ 
+#ppl-setup-name-header {
+    grid-column-start: 1;
+    grid-column-end: column1-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+#ppl-setup-raw-header {
+    grid-column-start: 2;
+    grid-column-end: column2-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+#ppl-setup-title-header {
+    grid-column-start: 3;
+    grid-column-end: column3-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+#ppl-setup-bill-header {
+    grid-column-start: 4;
+    grid-column-end: column4-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+#ppl-setup-mult-header {
+    grid-column-start: 5;
+    grid-column-end: column5-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}
+
+.person-container {
+    grid-column-start: 1;
+    grid-column-end: column5-end;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 5px;
+}

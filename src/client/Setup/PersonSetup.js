@@ -1,19 +1,53 @@
 import React, { useState, useEffect } from 'react'
+import './main.css'
+import './person.css'
 
 function PersonSetup(props) {
 
-    const setMult = (e) => {
+    const [state, updateState] = useState(props.person)
+    const [mult, updateMult] = useState({ billRate: props.person.billRate, rawRate: props.person.rawRate })
 
+    const changeState = (e) => {
+        const name = e.name
+        const value = e.value
+        const newState = { [name]: value }
+        updateState(newState)
+    }
+
+    const setMult = (e) => {
+        // console.log('set mult: ', e.value)
+        // var name
+        // if (e.name == 'billingRate') {
+        //     name = 'billingRate'
+        // }
+        // if (e.name == 'rawRate') {
+        //     name = 'rawRate'
+        // }
+        // console.log('set mult: ', e.value, 'name: ,', name)
+        // const value = parseInt(e.value)
+        // const newMult = { [name]: value }
+        // updateMult(newMult)
     }
 
     return (
-        <>
-            <p key={`setup-${props.person.name}`} className="label">Name</p><input className="ppl-input" type="text" name="name" value={props.person.name} onChange={(e) => props.changeState(e.target)} />
-            <p key={`setup-${props.person.rawRate}`} className="label">Raw Rate</p><input className="ppl-input" type="text" name="rawRate" value={props.person.rawRate} onChange={(e) => props.changeState(e.target)} />
-            <p key={`setup-${props.person.billTitle}`} className="label">Billing Title</p><input className="ppl-input" type="text" name="billingTitle" value={props.person.billTitle} onChange={(e) => props.changeState(e.target)} />
-            <p key={`setup-${props.person.billRate}`} className="label">Billing Rate</p><input className="ppl-input" type="text" name="billingRate" value={props.person.billRate} onChange={(e) => props.changeState(e.target)} />
-            <p key={`setup-mult`} className="label">Multiplier</p><input className="ppl-input" type="text" name="multiplier" value={props.person.multiplier} onChange={(e) => setMult(e.target)} />
-        </>
+        <div className="person-data">
+            <input className="ppl-name-input" type="text" name="name" value={state.name} onChange={(e) => changeState(e.target)} />
+            <input className="ppl-raw-input" type="text" name="rawRate" value={state.rawRate}
+                onChange={(e) => {
+                    changeState(e.target);
+                    setMult(e.target);
+                }}
+            />
+            <input className="ppl-title-input" type="text" name="billingTitle"
+                value={state.billTitle} onChange={(e) => changeState(e.target)} />
+            <input className="ppl-bill-input" type="text" name="billingRate" value={state.billRate}
+                onChange={(e) => {
+                    changeState(e.target);
+                    setMult(e.target);
+                }} />
+            <input className="ppl-mult-input" type="text" name="multiplier"
+                value={parseInt(state.billRate).toFixed(2) / parseInt(state.rawRate).toFixed(2)} />
+        </div>
     )
 
 }

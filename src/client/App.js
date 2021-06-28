@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Nav from './Nav'
 import Setup from './Setup'
 import Fee from './Fee'
 import PeopleSetup from './PeopleSetup'
@@ -12,9 +13,7 @@ function App() {
         return (
             <>
                 <Setup />
-                <input className="view-change" type="button" name="Setup" value='Setup' onClick={(e) => changeView(e.target.value)} />
-                <input className="view-change" type="button" name="Fee" value='Fee' onClick={(e) => changeView(e.target.value)} />
-                <input className="view-change" type="button" name="People Setup" value='People Setup' onClick={(e) => changeView(e.target.value)} />
+                <Nav changeView={changeView} />
             </>
         )
     }
@@ -22,9 +21,7 @@ function App() {
         return (
             <>
                 <Fee />
-                <input className="view-change" type="button" name="Setup" value='Setup' onClick={(e) => changeView(e.target.value)} />
-                <input className="view-change" type="button" name="Fee" value='Fee' onClick={(e) => changeView(e.target.value)} />
-                <input className="view-change" type="button" name="People Setup" value='People Setup' onClick={(e) => changeView(e.target.value)} />
+                <Nav changeView={changeView} />
             </>
         )
     }
@@ -33,9 +30,7 @@ function App() {
         return (
             <>
                 <PeopleSetup />
-                <input className="view-change" type="button" name="Setup" value='Setup' onClick={(e) => changeView(e.target.value)} />
-                <input className="view-change" type="button" name="Fee" value='Fee' onClick={(e) => changeView(e.target.value)} />
-                <input className="view-change" type="button" name="People Setup" value='People Setup' onClick={(e) => changeView(e.target.value)} />
+                <Nav changeView={changeView} />
             </>
         )
     }
