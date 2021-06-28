@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import InitialTasks from './Tasks/InitialTasks';
+import InitialTasks from './Tasks/InitialTasks'
 import InitialPeople from './People/InitialPeople'
 import Tasks from './Tasks/Tasks'
 import './css/main.css'
