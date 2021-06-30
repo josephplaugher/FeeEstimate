@@ -5,10 +5,10 @@ import Fee from './Fee'
 import PeopleSetup from './PeopleSetup'
 import './css/setup.css'
 
-function App() {
+function App(props) {
 
     const [currentView, changeView] = useState('Setup')
-
+    console.log('props in app:', props)
     if (currentView == 'Setup') {
         return (
             <>
@@ -29,7 +29,7 @@ function App() {
     if (currentView == 'People Setup') {
         return (
             <>
-                <PeopleSetup />
+                <PeopleSetup people={props.people} />
                 <Nav changeView={changeView} />
             </>
         )

@@ -1,5 +1,5 @@
 import { createStore } from 'redux'
-import reducer from './reducer'
+import RootReducer from './r_reducers/RootReducer'
 import InitialTasks from './client/Tasks/InitialTasks'
 import InitialPeople from './client/People/InitialPeople'
 
@@ -8,6 +8,6 @@ const defaultState = {
     people: InitialPeople
 }
 
-const store = createStore(reducer, defaultState)
+const Store = createStore(RootReducer, defaultState)
 
-export default store
+export default Store
