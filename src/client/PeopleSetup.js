@@ -8,7 +8,7 @@ import './Setup/main.css'
 function PeopleSetup(props) {
 
 	const [state, updateState] = useState({})
-
+	console.log('props in peopleSetup: ,', props)
 	return (
 
 		<div id="ppl-setup-container">
