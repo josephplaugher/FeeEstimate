@@ -1,6 +1,7 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as PersonActions from './../r_actions/PersonActions'
+import * as TaskActions from './../r_actions/TaskActions'
 import App from './App'
 
 function mapStateToProps(state) {
@@ -11,7 +12,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(PersonActions, dispatch)
+    return bindActionCreators(PersonActions, TaskActions, dispatch)
 }
 
 const Main = connect(mapStateToProps, mapDispatchToProps)(App)

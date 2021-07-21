@@ -24,3 +24,5 @@ function removePerson(name) {
         name
     }
 }
+
+export { updateRate, addPerson, removePerson }
