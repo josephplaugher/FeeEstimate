@@ -1,36 +1,51 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Nav from './Nav'
 import Setup from './Setup'
 import Fee from './Fee'
 import PeopleSetup from './PeopleSetup'
 import './css/setup.css'
 
-function App(props) {
-
-    const [currentView, changeView] = useState('People Setup')
-    console.log('props in app:', props)
-    if (currentView == 'Setup') {
-        return (
-            <>
-                <Setup props={props} />
-                <Nav changeView={changeView} />
-            </>
-        )
-    }
-    if (currentView == 'Fee') {
-        return (
-            <>
-                <Fee props={props} />
-                <Nav changeView={changeView} />
-            </>
-        )
+class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            currentView: {
+                'PeopleSetup': true,
+                'Fee': false,
+                'Setup': false
+            },
+            "test": false
+        }
+        console.log('store:', this.props)
+        this.changeView = this.changeView.bind(this)
     }
 
-    if (currentView == 'People Setup') {
+    changeView = (val) => {
+
+    }
+
+    render() {
         return (
             <>
-                <PeopleSetup props={props} />
-                <Nav changeView={changeView} />
+                {this.state.currentView.Setup ? (
+                    <>
+                        <Setup props={this.props} />
+                        <Nav changeView={this.changeView} />
+                    </>
+                ) : null}
+                {this.state.currentView.Fee ? (
+                    <>
+                        <Fee props={this.props} />
+                        <Nav changeView={this.changeView} />
+                    </>
+                ) : null}
+                {this.state.currentView.PeopleSetup ? (
+                    <>
+                        <PeopleSetup props={this.props} />
+                        <Nav changeView={this.changeView} />
+                    </>
+                ) : null}
+
             </>
         )
     }
