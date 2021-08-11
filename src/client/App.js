@@ -7,7 +7,7 @@ import './css/setup.css'
 
 function App() {
 
-    const [currentView, changeView] = useState('Setup')
+    const [currentView, changeView] = useState('People Setup')
 
     if (currentView == 'Setup') {
         return (
