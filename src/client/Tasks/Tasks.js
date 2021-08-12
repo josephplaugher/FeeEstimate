@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import Person from '../People/People'
-import InitialPeople from '../People/InitialPeople'
+import PersonInTask from '../People/PersonInTask'
 import './main.css'
 
-function Tasks(props) {
-    // const [tasks, setTasks] = useState()
+const Tasks = (props) => {
 
     const getTaskTotal = (task, people) => {
-        console.log('task/people,: ', task, people)
         var i = 0
         var personTotals = []
         for (i = 0; i < task.people.length; i++) {
-            console.log('in get task total: ', people[i])
             personTotals[i] = getPersonTotal(people[i], task)
         }
         var taskTotal = personTotals.reduce(getTotal)
@@ -22,7 +18,6 @@ function Tasks(props) {
         var i = 0
         for (i = 0; i < task.people.length; i++) {
             if (task.people[i].name == person.name) {
-                console.log('in person totals: ', task.people[i].hours, person.billRate)
                 var total = parseInt(task.people[i].hours * person.billRate, 2)
                 return total
             }
@@ -37,8 +32,8 @@ function Tasks(props) {
         <div className="task-container">
             <p key={props.task.number}>Task: {props.task.number} - {props.task.name}</p>
             <div className="people-container">
-                {InitialPeople.map((p) =>
-                    <Person person={p} key={`Person-${p.name}`}></Person>
+                {props.people.map((p) =>
+                    <PersonInTask person={p} task={props.task} key={`Person-${p.name}`} />
                 )}
             </div>
             <div key={`${props.task.number} total`} className="task-totals"><p>{getTaskTotal(props.task, props.people)}</p></div>

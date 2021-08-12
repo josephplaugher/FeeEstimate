@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import PersonSetup from './Setup/PersonSetup'
-import InitialPeople from './People/InitialPeople'
-import './Setup/main.css'
 import './Setup/main.css'
 
-function PeopleSetup() {
-
-	const [state, updateState] = useState({})
+const PeopleSetup = (props) => {
 
 	return (
 		<div id="ppl-setup-container">
@@ -16,8 +12,8 @@ function PeopleSetup() {
 			<p id="ppl-setup-bill-header">Bill Rate</p>
 			<p id="ppl-setup-mult-header">Multiplier</p>
 			<div id="person-container">
-				{InitialPeople.map(p =>
-					<PersonSetup person={p} key={`setup-${p.name}`} ></PersonSetup>
+				{props.people.map(p =>
+					<PersonSetup person={p} updatePeople={() => props.updatePeople} key={`setup-${p.name}`} ></PersonSetup>
 				)}
 			</div>
 		</div >

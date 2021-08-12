@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import InitialPeople from './People/InitialPeople'
+import InitialTasks from './Tasks/InitialTasks'
 import Nav from './Nav'
 import Setup from './Setup'
 import Fee from './Fee'
 import PeopleSetup from './PeopleSetup'
 import './css/setup.css'
 
-function App() {
-
-    const [currentView, changeView] = useState('People Setup')
+const App = () => {
+    const [people, updatePeople] = useState(InitialPeople)
+    const [tasks, updateTasks] = useState(InitialTasks)
+    const [currentView, changeView] = useState('Fee')
 
     if (currentView == 'Setup') {
         return (
@@ -20,7 +23,7 @@ function App() {
     if (currentView == 'Fee') {
         return (
             <>
-                <Fee />
+                <Fee tasks={tasks} people={people} updateTasks={updateTasks} />
                 <Nav changeView={changeView} />
             </>
         )
@@ -29,7 +32,7 @@ function App() {
     if (currentView == 'People Setup') {
         return (
             <>
-                <PeopleSetup />
+                <PeopleSetup people={people} updatePeople={updatePeople} />
                 <Nav changeView={changeView} />
             </>
         )
