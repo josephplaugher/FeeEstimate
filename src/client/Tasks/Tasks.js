@@ -3,6 +3,7 @@ import PersonInTask from '../People/PersonInTask'
 import './main.css'
 
 const Tasks = (props) => {
+    // console.log('task data:', props.task, 'person data: ', props.people)
 
     const getTaskTotal = (task, people) => {
         var i = 0
@@ -32,11 +33,11 @@ const Tasks = (props) => {
         <div className="task-container">
             <p key={props.task.number}>Task: {props.task.number} - {props.task.name}</p>
             <div className="people-container">
-                {props.people.map((p) =>
-                    <PersonInTask person={p} task={props.task} key={`Person-${p.name}`} />
+                {props.task.people.map((p) =>
+                    <PersonInTask task={p} person={props.people} key={`Person-${p.name}`} />
                 )}
             </div>
-            <div key={`${props.task.number} total`} className="task-totals"><p>{getTaskTotal(props.task, props.people)}</p></div>
+            <div key={`${props.task.number} total`} className="task-totals"><p>fix task total</p></div>
         </div>
     )
 }
