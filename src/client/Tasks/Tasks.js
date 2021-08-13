@@ -25,6 +25,14 @@ const Tasks = (props) => {
         }
     }
 
+    const getThisPerson = (subjectPerson) => {
+        for (let i = 0; i < props.people.length; i++) {
+            if (props.people[i].name == subjectPerson) {
+                return props.people[i]
+            }
+        }
+    }
+
     const getTotal = (total, currentNumber) => {
         return total + currentNumber
     }
@@ -34,7 +42,7 @@ const Tasks = (props) => {
             <p key={props.task.number}>Task: {props.task.number} - {props.task.name}</p>
             <div className="people-container">
                 {props.task.people.map((p) =>
-                    <PersonInTask task={p} person={props.people} key={`Person-${p.name}`} />
+                    <PersonInTask task={p} person={getThisPerson(p.name)} key={`Person-${p.name}`} />
                 )}
             </div>
             <div key={`${props.task.number} total`} className="task-totals"><p>fix task total</p></div>
