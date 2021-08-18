@@ -5,11 +5,13 @@ import './person.css'
 const PersonSetup = (props) => {
 
     const [mult, updateMult] = useState(props.person.billRate / props.person.rawRate)
+    // Because I am using shared state across sibling components which I also must update in those components
+    // i have to manually trigger a state update to get the current component to rerender without having to switch
+    // views. the rerender state here updates the UI.
     const [rerender, TriggerRerender] = useState(0)
 
     const changeState = (e) => {
         const newState = Object.assign(props.person, { [e.name]: e.value })
-        console.log('new state: ', newState)
         props.updatePerson(newState)
         TriggerRerender(rerender + 1)
     }
@@ -26,7 +28,6 @@ const PersonSetup = (props) => {
             name = 'rawRate'
             newMult = props.person.billRate / value
         }
-        console.log('setMutl State: ', props.person)
         updateMult(newMult)
     }
 

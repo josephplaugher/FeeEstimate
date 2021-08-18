@@ -13,7 +13,7 @@ const PeopleSetup = (props) => {
 			<p id="ppl-setup-mult-header">Multiplier</p>
 			<div id="person-container">
 				{props.people.map(p =>
-					<PersonSetup person={p} updatePerson={() => props.updatePeople} key={`setup-${p.name}`} />
+					<PersonSetup person={p} updatePerson={props.updatePerson} key={`setup-${p.name}`} />
 				)}
 			</div>
 		</div >
