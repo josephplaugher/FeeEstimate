@@ -4,16 +4,8 @@ import './main.css'
 const PersonInTask = (props) => {
 
     const getBillAmount = () => {
-        // for (let i = 0; i < props.task.length; i++) {
-        //     if (props.task[i].name == props.person.name) {
-        //         console.log('bill rate', props.person.billRate, 'hours', props.task[i].hours)
-        //         return props.person.billRate * props.task[i].hours
-        //     }
-        // }
         return props.task.hours * props.person.billRate
     }
-
-    console.log('task data:', props.task, 'person data: ', props.person)
 
     return (
         <div className="cost-data" key={props.task.name}>

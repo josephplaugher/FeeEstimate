@@ -10,7 +10,7 @@ import './css/setup.css'
 const App = () => {
     const [people, updatePeople] = useState(InitialPeople)
     const [tasks, updateTasks] = useState(InitialTasks)
-    const [currentView, changeView] = useState('Fee')
+    const [currentView, changeView] = useState('People Setup')
 
     if (currentView == 'Setup') {
         return (
