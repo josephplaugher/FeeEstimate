@@ -1,27 +1,31 @@
 import sys
-from flask_restful import Resource
+from flask_restful import Resource, reqparse
+parser = reqparse.RequestParser()
 sys.path.append('../api')
 from dbconn import dbconn
-from dotenv import load_dotenv, dotenv_values
 import json
 
-class AllPeople(Resource):
-    def get(self):
-        print('get all people')
-        return {'people': "all"}
-
-    def post(self, personData):
-        print('adding person')
-        return {'person': 'addeed'}
-
-class PeopleByID(Resource):
-    def get(self, id):
-        print('get person by id')
-        load_dotenv()
-        # conn = psycopg2.connect(database="fee_estimate", user="postgres", password="Edison1985!", host="127.0.0.1", port="5432" )
-        # Connection = conn.cursor()
+class GetPeopleByProject(Resource):
+    def get(self, projectnumber):
         Connection = dbconn()
-        Connection.execute('SELECT name, billrate::float, rawrate::float, billtitle FROM people WHERE project_number=10000000')
-        person = Connection.fetchone()
-        print(person)
-        return person
+        Connection.execute('SELECT id::int,name, billrate::float, rawrate::float, billtitle FROM people WHERE project_number=%s',[projectnumber])
+        person = Connection.fetchall()
+        return person, 200
+
+class UpdatePerson(Resource):
+    print('updating person')
+    def post(self, projectnumber,id):
+        parser.add_argument('name', type=str)
+        parser.add_argument('billrate', type=str)
+        parser.add_argument('rawrate', type=str)
+        parser.add_argument('billtitle', type=str)
+        body = parser.parse_args()
+        try:
+            Connection = dbconn()
+            Connection.execute('UPDATE people SET (name, billrate, rawrate, billtitle) = (%s,%s,%s,%s) WHERE project_number=%s AND id=%s',[body.name, body.billrate, body.rawrate, body.billtitle, projectnumber, id])
+            Connection.close() 
+            return 'updated', 200
+        except Exception as exc:
+            print("Error executing SQL: %s"%exc)
+            return 'error posting data: %s'%exc
+        

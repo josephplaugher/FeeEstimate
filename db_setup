@@ -1,0 +1,12 @@
+create sequence people_id_sequence
+create sequence task_id_sequence
+
+create table people (id smallint default nextval('people_id_sequence'), name varchar(40), billtitle varchar(40), rawrate numeric(5,2), billrate numeric(5,2));
+
+create table tasks (id smallint default nextval('task_id_sequence'), project_number smallint, contract varchar(20), number varchar(10), name varchar(100), people text);
+
+create table project (number smallint, name varchar(30), gross_fee int, net_fee int);
+
+insert into people (project_number, name, billrate, billtitle, rawrate) values (10000000, 'Joseph Plaugher', 110, 'Project Accountant', 30);
+
+DBCONN="database=fee_estimate, user=postgres, password=Edison1985!, host=127.0.0.1, port=5432"
